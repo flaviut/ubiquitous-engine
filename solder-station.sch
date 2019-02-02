@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title ""
 Date ""
 Rev ""
@@ -498,7 +498,7 @@ L Device:R R3
 U 1 1 5C5A872B
 P 4550 1650
 F 0 "R3" H 4620 1696 50  0000 L CNN
-F 1 "DNP" H 4620 1605 50  0000 L CNN
+F 1 "3.3" H 4620 1605 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4480 1650 50  0001 C CNN
 F 3 "~" H 4550 1650 50  0001 C CNN
 	1    4550 1650
@@ -1325,4 +1325,10 @@ F 3 "" H 1850 6500 50  0001 C CNN
 	1    1850 6500
 	1    0    0    -1  
 $EndComp
+$Sheet
+S 3050 6200 2250 1050
+U 5C542287
+F0 "Power supply" 50
+F1 "power.sch" 50
+$EndSheet
 $EndSCHEMATC
