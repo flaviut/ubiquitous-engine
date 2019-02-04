@@ -1,5 +1,34 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 74AUP1G57
+D Configurable Multi-Function Single Gate, Low-Voltage CMOS
+K Configurable Single Gate LVC CMOS
+F http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf
+$ENDCMP
+#
+$CMP 74AUP1G97
+D Configurable Multi-Function Single Gate, Low-Voltage CMOS
+K Configurable Single Gate LVC CMOS
+F http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf
+$ENDCMP
+#
+$CMP 74LVC1G57
+D Configurable Multi-Function Single Gate, Low-Voltage CMOS
+K Configurable Single Gate LVC CMOS
+F http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf
+$ENDCMP
+#
+$CMP 74LVC1G97
+D Configurable Multi-Function Single Gate, Low-Voltage CMOS
+K Configurable Single Gate LVC CMOS
+F http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf
+$ENDCMP
+#
+$CMP FM1613
+D Synchronous, highly integrated, 1A DC-DC buck converter
+F https://datasheet.lcsc.com/szlcsc/Shenzhen-Fuman-Elec-FM1613_C107576.pdf
+$ENDCMP
+#
 $CMP MCP4651-103
 F https://www.mouser.com/datasheet/2/268/DS-22096a-36447.pdf
 $ENDCMP
@@ -26,6 +55,11 @@ $CMP UC3845_SOIC8_0
 D Current-Mode PWM Controllers, 50% Duty Cycle, 8.4V/7.6V UVLO, SOIC-8
 K SMPS PWM Controller
 F http://www.ti.com/lit/ds/symlink/uc3842.pdf
+$ENDCMP
+#
+$CMP XC6201P332
+D Low dropout voltage regulator, 3.3V, 150mA
+F https://datasheet.lcsc.com/szlcsc/Torex-Semicon-XC6201P332MR_C29404.pdf
 $ENDCMP
 #
 #End Doc Library
