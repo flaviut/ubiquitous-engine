@@ -121,15 +121,7 @@ Wire Wire Line
 Wire Wire Line
 	8100 1850 8700 1850
 Wire Wire Line
-	8700 2450 8100 2450
-Wire Wire Line
 	8100 2450 8100 2250
-Text HLabel 10350 2350 2    50   BiDi ~ 0
-I_SWDIO
-Text HLabel 10350 2450 2    50   Input ~ 0
-I_SWCLK
-Text HLabel 8550 1350 0    50   Input ~ 0
-I_RESET
 $Comp
 L power:+3.3V #PWR020
 U 1 1 5C4561D0
@@ -165,12 +157,6 @@ F 3 "" H 9000 850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 9000 850 
-Text HLabel 8500 3700 0    50   BiDi ~ 0
-I_SWDIO
-Text HLabel 8500 3800 0    50   Input ~ 0
-I_SWCLK
-Text HLabel 8500 3900 0    50   Output ~ 0
-I_RESET
 $Comp
 L Connector_Generic:Conn_01x05 J3
 U 1 1 5C45FB99
@@ -182,10 +168,6 @@ F 3 "~" H 8700 3700 50  0001 C CNN
 	1    8700 3700
 	1    0    0    -1  
 $EndComp
-Text HLabel 10350 2150 2    50   BiDi ~ 0
-I2C1_SCL
-Text HLabel 10350 2250 2    50   BiDi ~ 0
-I2C1_SDA
 $Comp
 L power:GNDA #PWR032
 U 1 1 5C491515
@@ -247,17 +229,14 @@ $EndComp
 $Comp
 L power:GNDA #PWR017
 U 1 1 5C4FB4F8
-P 6950 1750
-F 0 "#PWR017" H 6950 1500 50  0001 C CNN
-F 1 "GNDA" H 6955 1577 50  0000 C CNN
-F 2 "" H 6950 1750 50  0001 C CNN
-F 3 "" H 6950 1750 50  0001 C CNN
-	1    6950 1750
+P 6850 1750
+F 0 "#PWR017" H 6850 1500 50  0001 C CNN
+F 1 "GNDA" H 6855 1577 50  0000 C CNN
+F 2 "" H 6850 1750 50  0001 C CNN
+F 3 "" H 6850 1750 50  0001 C CNN
+	1    6850 1750
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6850 1750 6950 1750
-Connection ~ 6950 1750
 $Comp
 L Device:R R6
 U 1 1 5C4FC18A
@@ -280,10 +259,6 @@ F 3 "~" H 4300 1250 50  0001 C CNN
 	1    4300 1250
 	1    0    0    -1  
 $EndComp
-Text HLabel 3350 1800 2    50   Output ~ 0
-IRON_PWR
-Text HLabel 4850 1400 0    50   Input ~ 0
-IRON_PWR
 Wire Wire Line
 	4850 1400 4900 1400
 Wire Wire Line
@@ -308,12 +283,6 @@ Wire Wire Line
 	4300 1400 4300 1500
 Wire Wire Line
 	6300 1650 6550 1650
-Text HLabel 10350 1950 2    50   Output ~ 0
-EN_SEN
-Text HLabel 10350 2050 2    50   Output ~ 0
-EN_PWR
-Text HLabel 10350 1550 2    50   Input ~ 0
-A_IRON
 $Comp
 L Device:Q_NMOS_DGS Q3
 U 1 1 5C51F98F
@@ -340,8 +309,6 @@ Wire Wire Line
 	6300 1650 6300 1750
 Wire Wire Line
 	6300 1150 6300 1250
-Text HLabel 5400 2700 0    50   Input ~ 0
-EN_SEN
 Wire Wire Line
 	5400 1150 5400 1400
 Wire Wire Line
@@ -413,8 +380,6 @@ Wire Wire Line
 Wire Wire Line
 	4450 1800 4450 1650
 NoConn ~ 4300 1800
-Text HLabel 7300 1450 2    50   Output ~ 0
-A_IRON
 Wire Notes Line
 	7650 550  7650 3000
 Wire Notes Line
@@ -464,10 +429,6 @@ F 3 "http://www.ti.com/lit/ds/symlink/lm75b.pdf" H 1200 4250 50  0001 C CNN
 	1    1200 4250
 	-1   0    0    -1  
 $EndComp
-Text HLabel 1600 4250 2    50   BiDi ~ 0
-I2C1_SCL
-Text HLabel 1600 4150 2    50   BiDi ~ 0
-I2C1_SDA
 Wire Notes Line
 	550  5050 2100 5050
 Wire Notes Line
@@ -731,10 +692,6 @@ Wire Wire Line
 	5100 4850 5300 4850
 Wire Wire Line
 	5100 4200 5100 4850
-Text HLabel 5950 4100 2    50   Output ~ 0
-A_THERMO
-Text HLabel 10350 1450 2    50   Input ~ 0
-A_THERMO
 Text Notes 3950 5350 0    50   ~ 0
 Filtering based on recs in analog.com/.../measuring-temp-\nusing-thermocouples\nR_fb/10kohm = (3.3V/20mV)
 Wire Notes Line
@@ -1091,10 +1048,6 @@ F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 1350 1900 50  0001 C CNN
 	1    1350 1900
 	1    0    0    -1  
 $EndComp
-Text HLabel 1150 1900 0    50   Input ~ 0
-EN_PWR
-Text HLabel 1150 2000 0    50   Input ~ 0
-EN_SEN
 $Sheet
 S 3050 6200 2250 1050
 U 5C542287
@@ -1281,9 +1234,6 @@ Wire Wire Line
 	9000 2150 9350 2150
 Wire Wire Line
 	9350 2450 9350 2650
-Wire Wire Line
-	9350 2650 9850 2650
-Connection ~ 9850 2650
 $Comp
 L power:GNDD #PWR0127
 U 1 1 5C5B6191
@@ -1318,10 +1268,6 @@ F 3 "" H 10350 1850 50  0001 C CNN
 	1    10350 1850
 	0    -1   -1   0   
 $EndComp
-Text HLabel 9900 3700 0    50   BiDi ~ 0
-I2C1_SCL
-Text HLabel 9900 3800 0    50   BiDi ~ 0
-I2C1_SDA
 $Comp
 L power:GNDD #PWR0112
 U 1 1 5C5FC4D9
@@ -1374,4 +1320,59 @@ $EndComp
 Connection ~ 5850 4250
 Wire Wire Line
 	5850 4250 5850 4100
+Text GLabel 10350 1950 2    50   Output ~ 0
+EN_SEN
+Text GLabel 10350 2050 2    50   Output ~ 0
+EN_PWR
+Text GLabel 10350 2150 2    50   BiDi ~ 0
+I2C1_SCL
+Text GLabel 10350 2250 2    50   BiDi ~ 0
+I2C1_SDA
+Text GLabel 10350 2350 2    50   BiDi ~ 0
+I_SWDIO
+Text GLabel 10350 2450 2    50   Input ~ 0
+I_SWCLK
+Text GLabel 10350 1450 2    50   Input ~ 0
+A_THERM
+Text GLabel 10350 1550 2    50   Input ~ 0
+A_IRON
+Text GLabel 8550 1350 0    50   Input ~ 0
+I_RESET
+Text GLabel 8500 3700 0    50   BiDi ~ 0
+I_SWDIO
+Text GLabel 8500 3800 0    50   Output ~ 0
+I_SWCLK
+Text GLabel 8500 3900 0    50   Output ~ 0
+I_RESET
+Text GLabel 9900 3700 0    50   BiDi ~ 0
+I2C1_SCL
+Text GLabel 9900 3800 0    50   BiDi ~ 0
+I2C1_SDA
+Text GLabel 5950 4100 2    50   Output ~ 0
+A_THERM
+Text GLabel 5400 2700 0    50   Input ~ 0
+EN_SEN
+Text GLabel 7300 1450 2    50   Output ~ 0
+A_IRON
+Text GLabel 1600 4250 2    50   BiDi ~ 0
+I2C1_SCL
+Text GLabel 1600 4150 2    50   BiDi ~ 0
+I2C1_SDA
+Text GLabel 1150 2000 0    50   Input ~ 0
+EN_SEN
+Text GLabel 1150 1900 0    50   Input ~ 0
+EN_PWR
+Text GLabel 3350 1800 2    50   Output ~ 0
+IRON_PWR
+Text GLabel 4850 1400 0    50   Input ~ 0
+IRON_PWR
+Connection ~ 8700 2450
+Wire Wire Line
+	8100 2450 8700 2450
+Connection ~ 9850 2650
+Wire Wire Line
+	9350 2650 9850 2650
+Connection ~ 6850 1750
+Wire Wire Line
+	6850 1750 6950 1750
 $EndSCHEMATC
