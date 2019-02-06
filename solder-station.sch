@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 2
+Sheet 1 3
 Title ""
 Date ""
 Rev ""
@@ -124,7 +124,6 @@ Wire Wire Line
 	8700 2450 8100 2450
 Wire Wire Line
 	8100 2450 8100 2250
-NoConn ~ 9350 2250
 Text HLabel 10350 2350 2    50   BiDi ~ 0
 I_SWDIO
 Text HLabel 10350 2450 2    50   Input ~ 0
@@ -177,14 +176,12 @@ L Connector_Generic:Conn_01x05 J3
 U 1 1 5C45FB99
 P 8700 3700
 F 0 "J3" H 8779 3742 50  0000 L CNN
-F 1 "SWD ISP" H 8779 3651 50  0000 L CNN
+F 1 "ISP" H 8779 3651 50  0000 L CNN
 F 2 "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Vertical" H 8700 3700 50  0001 C CNN
 F 3 "~" H 8700 3700 50  0001 C CNN
 	1    8700 3700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9000 2150 9350 2150
 Text HLabel 10350 2150 2    50   BiDi ~ 0
 I2C1_SCL
 Text HLabel 10350 2250 2    50   BiDi ~ 0
@@ -502,7 +499,7 @@ U 1 1 5C5F0BC2
 P 5100 1600
 F 0 "J2" H 5180 1546 50  0000 L CNN
 F 1 "Heating Element" H 5180 1501 50  0001 L CNN
-F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 5100 1600 50  0001 C CNN
+F 2 "TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type011_RT05502HBWC_1x02_P5.00mm_Horizontal" H 5100 1600 50  0001 C CNN
 F 3 "~" H 5100 1600 50  0001 C CNN
 	1    5100 1600
 	1    0    0    -1  
@@ -515,7 +512,7 @@ U 1 1 5C5FA7F0
 P 4000 4150
 F 0 "J1" H 3920 3917 50  0000 C CNN
 F 1 "Temp Sensor" H 4080 4051 50  0001 L CNN
-F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 4000 4150 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical" H 4000 4150 50  0001 C CNN
 F 3 "~" H 4000 4150 50  0001 C CNN
 	1    4000 4150
 	-1   0    0    1   
@@ -831,7 +828,6 @@ Connection ~ 4600 1100
 Wire Wire Line
 	4600 1100 4900 1100
 Connection ~ 6850 800 
-NoConn ~ 9350 2450
 Wire Notes Line
 	7950 550  10900 550 
 Wire Notes Line
@@ -855,25 +851,6 @@ F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/da
 	1    9850 1850
 	1    0    0    -1  
 $EndComp
-Text HLabel 10350 1750 2    50   Output ~ 0
-USART6_TX
-Text HLabel 10350 1850 2    50   Input ~ 0
-USART6_RX
-$Comp
-L power:+3.3V #PWR027
-U 1 1 5C6FF887
-P 9900 3500
-F 0 "#PWR027" H 9900 3350 50  0001 C CNN
-F 1 "+3.3V" V 9915 3628 50  0000 L CNN
-F 2 "" H 9900 3500 50  0001 C CNN
-F 3 "" H 9900 3500 50  0001 C CNN
-	1    9900 3500
-	0    -1   -1   0   
-$EndComp
-Text HLabel 9900 3700 0    50   Input ~ 0
-USART6_TX
-Text HLabel 9900 3800 0    50   Output ~ 0
-USART6_RX
 Wire Notes Line
 	9350 3300 10650 3300
 Wire Notes Line
@@ -883,19 +860,19 @@ Wire Notes Line
 Wire Notes Line
 	10650 3300 10650 4200
 Text Notes 9400 4150 0    50   ~ 0
-MCU Serial Interface
+MCU I2C Interface
 Wire Notes Line
 	9350 3300 9350 4200
 $Comp
 L Connector:Conn_01x04_Male J4
 U 1 1 5C70758E
-P 10100 3700
-F 0 "J4" H 10073 3580 50  0000 R CNN
-F 1 "STM_UART" H 10073 3671 50  0000 R CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical" H 10100 3700 50  0001 C CNN
-F 3 "~" H 10100 3700 50  0001 C CNN
-	1    10100 3700
-	-1   0    0    1   
+P 10100 3600
+F 0 "J4" H 10073 3480 50  0000 R CNN
+F 1 "I2C" H 10073 3571 50  0000 R CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical" H 10100 3600 50  0001 C CNN
+F 3 "~" H 10100 3600 50  0001 C CNN
+	1    10100 3600
+	-1   0    0    -1  
 $EndComp
 $Comp
 L power:GNDA #PWR0101
@@ -1205,17 +1182,6 @@ F 3 "" H 9850 2650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GNDD #PWR0112
-U 1 1 5C5FC4D9
-P 9900 3600
-F 0 "#PWR0112" H 9900 3350 50  0001 C CNN
-F 1 "GNDD" V 9904 3490 50  0000 R CNN
-F 2 "" H 9900 3600 50  0001 C CNN
-F 3 "" H 9900 3600 50  0001 C CNN
-	1    9900 3600
-	0    1    1    0   
-$EndComp
-$Comp
 L power:GNDD #PWR0113
 U 1 1 5C5FC6D0
 P 8500 3600
@@ -1311,4 +1277,71 @@ Wire Notes Line
 	3800 550  3800 2550
 Wire Notes Line
 	550  2400 3800 2400
+Wire Wire Line
+	9000 2150 9350 2150
+Wire Wire Line
+	9350 2450 9350 2650
+Wire Wire Line
+	9350 2650 9850 2650
+Connection ~ 9850 2650
+$Comp
+L power:GNDD #PWR0127
+U 1 1 5C5B6191
+P 9100 1550
+F 0 "#PWR0127" H 9100 1300 50  0001 C CNN
+F 1 "GNDD" H 9104 1395 50  0000 C CNN
+F 2 "" H 9100 1550 50  0001 C CNN
+F 3 "" H 9100 1550 50  0001 C CNN
+	1    9100 1550
+	1    0    0    -1  
+$EndComp
+NoConn ~ 9350 2250
+$Comp
+L power:GNDA #PWR0128
+U 1 1 5C5B008A
+P 10350 1750
+F 0 "#PWR0128" H 10350 1500 50  0001 C CNN
+F 1 "GNDA" V 10355 1622 50  0000 R CNN
+F 2 "" H 10350 1750 50  0001 C CNN
+F 3 "" H 10350 1750 50  0001 C CNN
+	1    10350 1750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GNDD #PWR0129
+U 1 1 5C5B3D65
+P 10350 1850
+F 0 "#PWR0129" H 10350 1600 50  0001 C CNN
+F 1 "GNDD" V 10354 1740 50  0000 R CNN
+F 2 "" H 10350 1850 50  0001 C CNN
+F 3 "" H 10350 1850 50  0001 C CNN
+	1    10350 1850
+	0    -1   -1   0   
+$EndComp
+Text HLabel 9900 3700 0    50   BiDi ~ 0
+I2C1_SCL
+Text HLabel 9900 3800 0    50   BiDi ~ 0
+I2C1_SDA
+$Comp
+L power:GNDD #PWR0112
+U 1 1 5C5FC4D9
+P 9900 3600
+F 0 "#PWR0112" H 9900 3350 50  0001 C CNN
+F 1 "GNDD" V 9904 3490 50  0000 R CNN
+F 2 "" H 9900 3600 50  0001 C CNN
+F 3 "" H 9900 3600 50  0001 C CNN
+	1    9900 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR027
+U 1 1 5C6FF887
+P 9900 3500
+F 0 "#PWR027" H 9900 3350 50  0001 C CNN
+F 1 "+3.3V" V 9915 3628 50  0000 L CNN
+F 2 "" H 9900 3500 50  0001 C CNN
+F 3 "" H 9900 3500 50  0001 C CNN
+	1    9900 3500
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC

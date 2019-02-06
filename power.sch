@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 2
+Sheet 2 3
 Title ""
 Date ""
 Rev ""
@@ -109,17 +109,6 @@ Wire Wire Line
 Wire Wire Line
 	4250 1450 4400 1450
 $Comp
-L Device:R R16
-U 1 1 5C559074
-P 3450 1250
-F 0 "R16" V 3243 1250 50  0000 C CNN
-F 1 "150m" V 3334 1250 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3380 1250 50  0001 C CNN
-F 3 "~" H 3450 1250 50  0001 C CNN
-	1    3450 1250
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:L_Core_Ferrite L2
 U 1 1 5C559E84
 P 3900 1250
@@ -130,28 +119,8 @@ F 3 "~" H 3900 1250 50  0001 C CNN
 	1    3900 1250
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	4050 1250 4150 1250
-Wire Wire Line
-	3600 1250 3750 1250
 Text Notes 3250 1000 0    50   ~ 0
 The resistor, inductor, and caps form a filter.\nIn simulation, this means 0.2mV pk-pk ripple
-Wire Wire Line
-	3250 1250 3250 1600
-Wire Wire Line
-	3250 1600 3550 1600
-Wire Wire Line
-	4150 1600 4150 1250
-Connection ~ 3250 1250
-Wire Wire Line
-	3250 1250 3300 1250
-Connection ~ 4150 1250
-Wire Wire Line
-	4150 1250 4250 1250
-Wire Wire Line
-	3850 1600 4150 1600
-Text Notes 3150 1750 0    50   ~ 0
-(in case filtering is uneeded)
 $Comp
 L Device:C C19
 U 1 1 5C562E07
@@ -175,19 +144,6 @@ F 3 "" H 1800 2100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 2900 1250
-Wire Wire Line
-	2900 1250 3250 1250
-$Comp
-L Jumper:SolderJumper_2_Open JP1
-U 1 1 5C566245
-P 3700 1600
-F 0 "JP1" H 3700 1713 50  0000 C CNN
-F 1 "SolderJumper_2_Open" H 3700 1714 50  0001 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3700 1600 50  0001 C CNN
-F 3 "~" H 3700 1600 50  0001 C CNN
-	1    3700 1600
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4550 1250 4850 1250
 Connection ~ 4550 1250
@@ -467,42 +423,14 @@ Wire Wire Line
 Wire Wire Line
 	1050 1700 1500 1700
 Connection ~ 900  4350
-$Comp
-L power:VCC #PWR?
-U 1 1 5C5C66D9
-P 2350 5100
-AR Path="/5C5C66D9" Ref="#PWR?"  Part="1" 
-AR Path="/5C542287/5C5C66D9" Ref="#PWR0114"  Part="1" 
-F 0 "#PWR0114" H 2350 4950 50  0001 C CNN
-F 1 "VCC" H 2367 5273 50  0000 C CNN
-F 2 "" H 2350 5100 50  0001 C CNN
-F 3 "" H 2350 5100 50  0001 C CNN
-	1    2350 5100
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5C5C66DF
-P 2350 5100
-AR Path="/5C5C66DF" Ref="#PWR?"  Part="1" 
-AR Path="/5C542287/5C5C66DF" Ref="#PWR0115"  Part="1" 
-F 0 "#PWR0115" H 2350 4950 50  0001 C CNN
-F 1 "+3.3V" H 2365 5273 50  0000 C CNN
-F 2 "" H 2350 5100 50  0001 C CNN
-F 3 "" H 2350 5100 50  0001 C CNN
-	1    2350 5100
-	1    0    0    -1  
-$EndComp
 Text Notes 850  5400 0    50   ~ 0
 Star ground
-Text Notes 1900 5400 0    50   ~ 0
-VCC for 74-series logic
 $Comp
 L Device:Net-Tie_4 NT1
 U 1 1 5C5CAA04
 P 1050 5150
 F 0 "NT1" H 1050 5328 50  0000 C CNN
-F 1 "Net-Tie_4" H 1050 5237 50  0000 C CNN
+F 1 "Star Ground" H 1050 5237 50  0000 C CNN
 F 2 "NetTie:NetTie-4_SMD_Pad2.0mm" H 1050 5150 50  0001 C CNN
 F 3 "~" H 1050 5150 50  0001 C CNN
 	1    1050 5150
@@ -568,29 +496,84 @@ F 3 "" H 1150 5250 50  0001 C CNN
 	1    1150 5250
 	0    -1   -1   0   
 $EndComp
-$Comp
-L power:VSS #PWR0123
-U 1 1 5C615B6D
-P 2150 5100
-F 0 "#PWR0123" H 2150 4950 50  0001 C CNN
-F 1 "VSS" H 2168 5273 50  0000 C CNN
-F 2 "" H 2150 5100 50  0001 C CNN
-F 3 "" H 2150 5100 50  0001 C CNN
-	1    2150 5100
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GNDD #PWR0124
-U 1 1 5C615CD1
-P 2150 5100
-F 0 "#PWR0124" H 2150 4850 50  0001 C CNN
-F 1 "GNDD" H 2154 4945 50  0000 C CNN
-F 2 "" H 2150 5100 50  0001 C CNN
-F 3 "" H 2150 5100 50  0001 C CNN
-	1    2150 5100
-	-1   0    0    1   
-$EndComp
 Connection ~ 1300 1150
 Wire Wire Line
 	1300 1150 1500 1150
+Wire Wire Line
+	2900 1250 3250 1250
+Wire Wire Line
+	3250 1250 3300 1250
+Connection ~ 3250 1250
+Wire Wire Line
+	3250 1250 3250 1600
+Wire Wire Line
+	4150 1250 4250 1250
+Wire Wire Line
+	4050 1250 4150 1250
+Connection ~ 4150 1250
+Wire Wire Line
+	4150 1600 4150 1250
+$Comp
+L Jumper:SolderJumper_2_Open JP1
+U 1 1 5C566245
+P 3700 1600
+F 0 "JP1" H 3700 1713 50  0000 C CNN
+F 1 "SolderJumper_2_Open" H 3700 1714 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3700 1600 50  0001 C CNN
+F 3 "~" H 3700 1600 50  0001 C CNN
+	1    3700 1600
+	1    0    0    -1  
+$EndComp
+Text Notes 3150 1750 0    50   ~ 0
+(in case filtering is uneeded)
+Wire Wire Line
+	3850 1600 4150 1600
+Wire Wire Line
+	3250 1600 3550 1600
+Wire Wire Line
+	3600 1250 3750 1250
+$Comp
+L Device:R R16
+U 1 1 5C559074
+P 3450 1250
+F 0 "R16" V 3243 1250 50  0000 C CNN
+F 1 "150m" V 3334 1250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3380 1250 50  0001 C CNN
+F 3 "~" H 3450 1250 50  0001 C CNN
+	1    3450 1250
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5C5D14AA
+P 1000 6200
+F 0 "#PWR02" H 1000 5950 50  0001 C CNN
+F 1 "GND" V 1005 6072 50  0000 R CNN
+F 2 "" H 1000 6200 50  0001 C CNN
+F 3 "" H 1000 6200 50  0001 C CNN
+	1    1000 6200
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+24V #PWR01
+U 1 1 5C5D158F
+P 1000 6100
+F 0 "#PWR01" H 1000 5950 50  0001 C CNN
+F 1 "+24V" V 1015 6228 50  0000 L CNN
+F 2 "" H 1000 6100 50  0001 C CNN
+F 3 "" H 1000 6100 50  0001 C CNN
+	1    1000 6100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J5
+U 1 1 5C5B1D54
+P 1200 6100
+F 0 "J5" H 1228 6076 50  0000 L CNN
+F 1 "Power" H 1228 5985 50  0000 L CNN
+F 2 "TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type011_RT05502HBWC_1x02_P5.00mm_Horizontal" H 1200 6100 50  0001 C CNN
+F 3 "~" H 1200 6100 50  0001 C CNN
+	1    1200 6100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
