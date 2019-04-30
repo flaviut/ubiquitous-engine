@@ -1,0 +1,29 @@
+digraph G {
+    splines=compound
+    concentrate=true
+    overlap=compress
+    sep=.5
+    node [shape=record]
+    
+    wall [label="{Wall}",fillcolor=yellowgreen,style=filled]
+    psu [label="{PSU|120W}"]
+    bat [label="{Battery|200W}",fillcolor=yellowgreen,style=filled]
+    heater [label="{Heater|{-24V|8.33A}|-200W}",fillcolor=pink,style=filled]
+    control [label="{Control|{-24V|.5A}|-12W}",fillcolor=pink,style=filled]
+    
+    bat_charge [label="{Charger|{Buck|CC/CV}|24W}"]
+    cur_lim [label="{Current Limiter|{BuckBoost|CC/CV}|96W}"]
+    bat_boost [label="{Boost|{Boost|CC/CV}|200W}"]
+    
+    wall -> psu [label="115V, 2.1A",weight=240]
+    psu -> bat_charge [label="24V, 1A", weight=24]
+    bat_charge -> bat [label="8V, 3A", weight=24]
+    bat -> bat_boost [label="8V, 25A", weight=200]
+    psu -> cur_lim [label="24V, 4A",weight=96]
+    cur_lim -> comm [dir=none, label="24V, 4A", weight=96]
+    bat_boost -> comm [dir=none, label="24V, 8.33A", weight=200]
+
+    
+    comm [shape=point,width=0]
+    comm -> {heater, control} [weight=296]
+}
