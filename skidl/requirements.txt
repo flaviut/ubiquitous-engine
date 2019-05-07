@@ -1,0 +1,3 @@
+skidl
+PySpice>=1.3.2
+pytest
