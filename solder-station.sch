@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:solder-station-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -98,9 +98,10 @@ L Oscillator:XO53 X1
 U 1 1 5C4316AB
 P 8700 2150
 F 0 "X1" H 8800 1800 50  0000 L CNN
-F 1 "20MHz" H 8800 1900 50  0000 L CNN
+F 1 "O503220MEDH4MI" H 8800 1900 50  0001 L CNN
 F 2 "Oscillator:Oscillator_SMD_EuroQuartz_XO53-4Pin_5.0x3.2mm_HandSoldering" H 9400 1800 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Yangxing-Tech-O705016MEDH4MI_C79413.pdf" H 8600 2150 50  0001 C CNN
+F 4 "20M" H 8850 1900 50  0000 C CNN "Frequency"
 	1    8700 2150
 	1    0    0    -1  
 $EndComp
@@ -110,7 +111,7 @@ L Device:C_Small C10
 U 1 1 5C43393A
 P 8100 2150
 F 0 "C10" H 8192 2196 50  0000 L CNN
-F 1 "4.7u" H 8192 2105 50  0000 L CNN
+F 1 ".1u" H 8192 2105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8100 2150 50  0001 C CNN
 F 3 "~" H 8100 2150 50  0001 C CNN
 	1    8100 2150
@@ -1231,8 +1232,6 @@ Wire Notes Line
 Wire Notes Line
 	550  2400 3800 2400
 Wire Wire Line
-	9000 2150 9350 2150
-Wire Wire Line
 	9350 2450 9350 2650
 $Comp
 L power:GNDD #PWR0127
@@ -1375,4 +1374,6 @@ Wire Wire Line
 Connection ~ 6850 1750
 Wire Wire Line
 	6850 1750 6950 1750
+Wire Wire Line
+	9000 2150 9350 2150
 $EndSCHEMATC

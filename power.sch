@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:solder-station-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -76,7 +76,7 @@ U 1 1 5C55217D
 P 2400 1250
 F 0 "L1" V 2222 1250 50  0000 C CNN
 F 1 "4.7u" V 2313 1250 50  0000 C CNN
-F 2 "Inductor_SMD:L_Bourns-SRN4018" H 2400 1250 50  0001 C CNN
+F 2 "Inductor_SMD:L_Taiyo-Yuden_NR-40xx_HandSoldering" H 2400 1250 50  0001 C CNN
 F 3 "~" H 2400 1250 50  0001 C CNN
 	1    2400 1250
 	0    1    1    0   
@@ -114,7 +114,7 @@ U 1 1 5C559E84
 P 3900 1250
 F 0 "L2" V 3722 1250 50  0000 C CNN
 F 1 "4.7u" V 3813 1250 50  0000 C CNN
-F 2 "Inductor_SMD:L_Bourns-SRN4018" H 3900 1250 50  0001 C CNN
+F 2 "Inductor_SMD:L_Taiyo-Yuden_NR-40xx_HandSoldering" H 3900 1250 50  0001 C CNN
 F 3 "~" H 3900 1250 50  0001 C CNN
 	1    3900 1250
 	0    1    1    0   
@@ -690,5 +690,213 @@ F 2 "" H 2750 6100 50  0001 C CNN
 F 3 "" H 2750 6100 50  0001 C CNN
 	1    2750 6100
 	-1   0    0    1   
+$EndComp
+$Comp
+L Regulator_Switching:LM27313XMF U9
+U 1 1 5C65F2D6
+P 7450 1450
+F 0 "U9" H 7450 1817 50  0000 C CNN
+F 1 "MT3608" H 7450 1726 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 7500 1200 50  0001 L CIN
+F 3 "https://datasheet.lcsc.com/szlcsc/XI-AN-Aerosemi-Tech-MT3608_C84817.pdf" H 7450 1550 50  0001 C CNN
+	1    7450 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C26
+U 1 1 5C65F564
+P 6850 1500
+F 0 "C26" H 6965 1546 50  0000 L CNN
+F 1 "4.7u" H 6965 1455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6888 1350 50  0001 C CNN
+F 3 "~" H 6850 1500 50  0001 C CNN
+	1    6850 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+24V #PWR0115
+U 1 1 5C65F56C
+P 6700 1350
+F 0 "#PWR0115" H 6700 1200 50  0001 C CNN
+F 1 "+24V" V 6715 1478 50  0000 L CNN
+F 2 "" H 6700 1350 50  0001 C CNN
+F 3 "" H 6700 1350 50  0001 C CNN
+	1    6700 1350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0123
+U 1 1 5C65F575
+P 7450 1750
+F 0 "#PWR0123" H 7450 1500 50  0001 C CNN
+F 1 "GND" H 7455 1577 50  0000 C CNN
+F 2 "" H 7450 1750 50  0001 C CNN
+F 3 "" H 7450 1750 50  0001 C CNN
+	1    7450 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 1350 7150 1550
+Connection ~ 7150 1350
+Wire Wire Line
+	6850 1750 6850 1650
+Wire Wire Line
+	6850 1350 7150 1350
+Wire Wire Line
+	6700 1350 6850 1350
+Connection ~ 6850 1350
+$Comp
+L Device:L_Core_Ferrite L3
+U 1 1 5C66C052
+P 7450 900
+F 0 "L3" V 7272 900 50  0000 C CNN
+F 1 "4.7u" V 7363 900 50  0000 C CNN
+F 2 "Inductor_SMD:L_Taiyo-Yuden_NR-40xx_HandSoldering" H 7450 900 50  0001 C CNN
+F 3 "~" H 7450 900 50  0001 C CNN
+F 4 "1.5A" V 7450 900 50  0001 C CNN "Max current"
+	1    7450 900 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7150 1350 7150 900 
+Wire Wire Line
+	7150 900  7300 900 
+Wire Wire Line
+	7600 900  7750 900 
+Wire Wire Line
+	7750 900  7750 1350
+$Comp
+L Device:R R18
+U 1 1 5C66E8D3
+P 8050 1600
+F 0 "R18" H 8120 1646 50  0000 L CNN
+F 1 "18k" H 8120 1555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 7980 1600 50  0001 C CNN
+F 3 "~" H 8050 1600 50  0001 C CNN
+	1    8050 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R17
+U 1 1 5C66E986
+P 8050 1300
+F 0 "R17" H 8120 1346 50  0000 L CNN
+F 1 "820k" H 8120 1255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 7980 1300 50  0001 C CNN
+F 3 "~" H 8050 1300 50  0001 C CNN
+	1    8050 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Schottky D1
+U 1 1 5C66FB5F
+P 7900 900
+F 0 "D1" H 7900 684 50  0000 C CNN
+F 1 "B5817WS-SJ" H 7900 775 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-323_HandSoldering" H 7900 900 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/MDD-Jiangsu-Yutai-Elec-B5817WS-SJ_C114023.pdf" H 7900 900 50  0001 C CNN
+	1    7900 900 
+	-1   0    0    1   
+$EndComp
+Connection ~ 7750 900 
+Wire Wire Line
+	7450 1750 8050 1750
+Connection ~ 7450 1750
+Wire Wire Line
+	8050 1150 8050 900 
+Wire Wire Line
+	7750 1550 7900 1550
+Wire Wire Line
+	7900 1550 7900 1450
+Wire Wire Line
+	7900 1450 8050 1450
+Connection ~ 8050 1450
+$Comp
+L Device:C C27
+U 1 1 5C6786AD
+P 8400 1500
+F 0 "C27" H 8515 1546 50  0000 L CNN
+F 1 "4.7u" H 8515 1455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8438 1350 50  0001 C CNN
+F 3 "~" H 8400 1500 50  0001 C CNN
+	1    8400 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8400 1350 8400 900 
+Wire Wire Line
+	8400 900  8050 900 
+Connection ~ 8050 900 
+Wire Wire Line
+	8050 1750 8400 1750
+Wire Wire Line
+	8400 1750 8400 1650
+Connection ~ 8050 1750
+Wire Wire Line
+	6850 1750 7450 1750
+$Comp
+L power:+28V #PWR0133
+U 1 1 5C67CEE0
+P 8600 1350
+F 0 "#PWR0133" H 8600 1200 50  0001 C CNN
+F 1 "+28V" V 8615 1478 50  0000 L CNN
+F 2 "" H 8850 1400 50  0001 C CNN
+F 3 "" H 8850 1400 50  0001 C CNN
+	1    8600 1350
+	0    1    1    0   
+$EndComp
+Text Notes 7600 1950 0    50   ~ 0
+.6/28=(18kohm/(18kohm+820kohm))\nActually 27.93V
+Wire Wire Line
+	8600 1350 8400 1350
+Connection ~ 8400 1350
+$Comp
+L Regulator_Switching:TPS54336ADDA U?
+U 1 1 5CC853B8
+P 5000 3350
+F 0 "U?" H 5000 3817 50  0000 C CNN
+F 1 "TPS54336ADDA" H 5000 3726 50  0000 C CNN
+F 2 "Package_SO:TI_SO-PowerPAD-8_ThermalVias" H 5900 3000 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps54336a.pdf" H 6000 2900 50  0001 C CNN
+	1    5000 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+24V #PWR?
+U 1 1 5CC8CA7B
+P 3950 3000
+F 0 "#PWR?" H 3950 2850 50  0001 C CNN
+F 1 "+24V" H 3965 3173 50  0000 C CNN
+F 2 "" H 3950 3000 50  0001 C CNN
+F 3 "" H 3950 3000 50  0001 C CNN
+	1    3950 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5CC90A62
+P 3950 3300
+F 0 "C?" H 4065 3346 50  0000 L CNN
+F 1 "C" H 4065 3255 50  0000 L CNN
+F 2 "" H 3988 3150 50  0001 C CNN
+F 3 "~" H 3950 3300 50  0001 C CNN
+	1    3950 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 3150 3950 3150
+Wire Wire Line
+	3950 3150 3950 3000
+Connection ~ 3950 3150
+$Comp
+L power:GND #PWR?
+U 1 1 5CC97E7D
+P 3950 3450
+F 0 "#PWR?" H 3950 3200 50  0001 C CNN
+F 1 "GND" H 3955 3277 50  0000 C CNN
+F 2 "" H 3950 3450 50  0001 C CNN
+F 3 "" H 3950 3450 50  0001 C CNN
+	1    3950 3450
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
