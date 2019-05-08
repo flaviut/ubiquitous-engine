@@ -1,38 +1,16 @@
-from skidl.pyspice import *
+from skidl import Part, Net, ERC, TEMPLATE, generate_netlist
 
+from solderstation.signal import voltage_divider
 
-def buck_converter(
-        nmos: Part,
-        diode: Part,
-        inductor: Part,
-        cap_input: Part,
-        cap_output: Part,
-):
-    @subcircuit
-    def buck_impl(pwm: Net, v_in: Net, v_out: Net, gnd: Net):
-        buck_inner_net = Net('buck_inner')
-
-        nmos['gate'] = pwm
-        nmos['drain'] = v_in
-        nmos['source'] = buck_inner_net
-
-        inductor['+'] = buck_inner_net
-        inductor['-'] = v_out
-
-        diode['-'] = buck_inner_net
-        diode['+'] = gnd
-
-        cap_input['+'] = v_in
-        cap_input['-'] = gnd
-        cap_output['+'] = v_in
-        cap_output['-'] = gnd
-
-    return buck_impl
-
+FOOTPRINT_R_0603 = 'Resistor_SMD:R_0603_1608Metric'
 
 if __name__ == '__main__':
-    buck_converter(
-        mosfet(
-
-        )
-    )
+    v_in = Net('v_in')
+    out = Net('out')
+    gnd = Net('gnd')
+    voltage_divider(
+        Part('Device', 'R', footprint=FOOTPRINT_R_0603, dest=TEMPLATE),
+        ratio=(24, 2)
+    )(v_in=v_in, gnd=gnd, out=out)
+    ERC()
+    generate_netlist()
